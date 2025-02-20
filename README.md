@@ -17,7 +17,8 @@ The only dependency is [rigbox](https://github.com/cortex-lab/Rigbox). This is b
 
 ⚠️ **WARNING:** The utilities here will only work as you expect insofar as you set these paths correctly! ⚠️
 
-<span style="background-color: #ff4d4d; color: white; padding: 8px 12px; border-radius: 4px; font-weight: bold; display: inline-block;">WARNING: The utilities here will only work as you expect insofar as you set these paths correctly!</span>
+> [!WARNING]
+> The utilities here will only work as you expect insofar as you set these paths correctly!
 
 Follow the instructions on the rigbox github page to set your dat paths.
 

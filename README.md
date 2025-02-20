@@ -17,6 +17,8 @@ The only dependency is [rigbox](https://github.com/cortex-lab/Rigbox). This is b
 
 ⚠️ **WARNING:** The utilities here will only work as you expect insofar as you set these paths correctly! ⚠️
 
+<span style="background-color: #ff4d4d; color: white; padding: 8px 12px; border-radius: 4px; font-weight: bold; display: inline-block;">WARNING: The utilities here will only work as you expect insofar as you set these paths correctly!</span>
+
 Follow the instructions on the rigbox github page to set your dat paths.
 
 ## Diskspace Utility
@@ -48,6 +50,7 @@ The copydata utility is an easy way to move data from a local directory to the s
 
 ⚠️ **Warning:** The copy data utility will copy data from ``p = dat.paths.localRepository`` to ``p = dat.paths.mainRepository``. Make sure you set these correctly, if you don't you might overwrite old data!!! ⚠️
 
+<span style="background-color: #ff4d4d; color: white; padding: 8px 12px; border-radius: 4px; font-weight: bold; display: inline-block;">The copy data utility will copy data from dat.paths.localRepository to dat.paths.mainRepository. Make sure you set these correctly, if you don't you might overwrite old data!!!</span>
 
 The copydata utility uses Windows' [robocopy](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy) command and will show you progress as it copies. The function will return different status codes to let you know if:
 - All files copied successfully

@@ -4,10 +4,18 @@ A very small package for some rig utilities.
 At B2 we built some simple scripts that are very useful for copying imaging data to the server and checking how much disk space is left before running an experiment. This repository contains the template for those scripts.
 
 ## Installation
-There's no fancy install system. Just copy the files (or clone them with git clone https://github.com/landoskape/cortexlab-rigtools), make sure you add them to the matlab path, and then you're ready. 
+There's no fancy install system. Just copy the files or clone them with:
+
+```bash
+git clone https://github.com/landoskape/cortexlab-rigtools
+``` 
+
+Then add them to the matlab path, and you're ready. 
 
 ## Dependencies
-The only dependency is [rigbox](https://github.com/cortex-lab/Rigbox). This is because we use the ``dat.paths`` structure to identify paths. This is critical: the utilities here will only work as you expect insofar as you set these paths correctly!!!!
+The only dependency is [rigbox](https://github.com/cortex-lab/Rigbox). This is because we use the ``dat.paths`` structure to identify paths. 
+
+⚠️ **WARNING:** The utilities here will only work as you expect insofar as you set these paths correctly!
 
 Follow the instructions on the rigbox github page to set your dat paths.
 
@@ -60,8 +68,8 @@ All you have to do is use the following command:
 For example:
 
   ```matlab
-  copyImagingData('AB123')                    % Copies all sessions from today
-  copyImagingData('AB123', '2024-03-21')      % Copies all sessions from specific date
+  copyImagingData('AB123')                    % Copies all data from this mouse
+  copyImagingData('AB123', '2024-03-21')      % Copies all data from specific mouse and date
   copyImagingData('AB123', '2024-03-21', '1') % Copies specific session
   ```
 

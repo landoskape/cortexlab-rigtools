@@ -52,7 +52,12 @@ for i = 1:numel(mouseFolders)
         folderSize = dirSize(folderPath) / 1024^3;
         
         % Calculate days since folder creation
-        folderDate = datetime(dateFolder, 'InputFormat', 'yyyy-MM-dd');
+        try
+            folderDate = datetime(dateFolder, 'InputFormat', 'yyyy-MM-dd');
+        catch
+            %warning('Invalid date format: %s. Skipping this folder.', dateFolder);
+            continue;
+        end
         daysSinceCreation = floor(days(currentDate - folderDate)) + 1;
         
         % Calculate GB-days
@@ -95,7 +100,7 @@ if nargout == 0
         user = sortedUsers{i};
         fprintf('%s: %.2f GB-Days\n', user, userGBDays(user));
     end
-
+    
     % Display detailed table
     fprintf('\nDetailed Usage:\n');
     disp(sortedDataTable);

@@ -60,17 +60,17 @@ else
     usedSpace = diskSpaceUsed;
 end
     
-% change formatting for displaying
+% change formatting before displaying
 Size_GB = arrayfun(@(x) sprintf('%.3f', x), usedSpace.Size_GB, 'UniformOutput', false);
 Size_GB(usedSpace.Size_GB < 0.001) = {'0.000'}; % Force very small values to "0.000"
 DaysSinceCreation = arrayfun(@(x) sprintf('%d', x), usedSpace.DaysSinceCreation, 'UniformOutput', false);
 GB_Days = arrayfun(@(x) sprintf('%.3f', x), usedSpace.GB_Days, 'UniformOutput', false);
 GB_Days(usedSpace.GB_Days < 0.001) = {'0.000'}; % Force very small values to "0.000"
-usedSpace_new = table(Size_GB, DaysSinceCreation, GB_Days, 'VariableNames', usedSpace.Properties.VariableNames,'RowNames',usedSpace.Properties.RowNames);
+usedSpace_new = table(Size_GB, DaysSinceCreation, GB_Days, 'VariableNames', usedSpace.Properties.VariableNames);
 
-disp(usedSpace);
+disp(usedSpace_new);
 disp(timeLeftTable);
-diskSpaceWarning(msg, usedSpace_new);
+diskSpaceWarning(msg, usedSpace);
 
     function diskSpaceWarning(msg, diskSpace)
         dboxWidth = 1000;

@@ -59,6 +59,15 @@ if blame
 else
     usedSpace = diskSpaceUsed;
 end
+    
+% change formatting for displaying
+Size_GB = arrayfun(@(x) sprintf('%.3f', x), usedSpace.Size_GB, 'UniformOutput', false);
+Size_GB(usedSpace.Size_GB < 0.001) = {'0.000'}; % Force very small values to "0.000"
+DaysSinceCreation = arrayfun(@(x) sprintf('%d', x), usedSpace.DaysSinceCreation, 'UniformOutput', false);
+GB_Days = arrayfun(@(x) sprintf('%.3f', x), usedSpace.GB_Days, 'UniformOutput', false);
+GB_Days(usedSpace.GB_Days < 0.001) = {'0.000'}; % Force very small values to "0.000"
+usedSpace = table(Size_GB, DaysSinceCreation, GB_Days, 'VariableNames', usedSpace.Properties.VariableNames,'RowNames',usedSpace.Properties.RowNames);
+
 disp(usedSpace);
 disp(timeLeftTable);
 diskSpaceWarning(msg, usedSpace);
